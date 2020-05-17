@@ -48,7 +48,7 @@ export default class GameManager extends cc.Component {
   getRandReel() {
     const reelResult = []
     for (let index = 0; index < 3; index++) {
-      reelResult.push(this.getRandInt(0,4));      
+      reelResult.push(this.getRandInt(0,29));      
     }
     return reelResult
   }
@@ -60,16 +60,16 @@ export default class GameManager extends cc.Component {
         const rand = this.getRandInt(1, 100);
         console.log(rand);
         if( rand <= 7 ){
-          const line1 = this.getRandInt(0,4);
-          const line2 = this.getRandInt(0,4);
-          const line3 = this.getRandInt(0,4);
+          const line1 = this.getRandInt(0,29);
+          const line2 = this.getRandInt(0,29);
+          const line3 = this.getRandInt(0,29);
           resolve([[line1, line2, line3],[line1, line2, line3],[line1, line2, line3],[line1, line2, line3],[line1, line2, line3]]);
         }
         else if( rand <= 17 ){
           const line1 = this.getRandInt(0,2);
           const line2 = this.getRandInt(0,2);
-          const sortedNum1 = this.getRandInt(0,4);
-          const sortedNum2 = this.getRandInt(0,4);
+          const sortedNum1 = this.getRandInt(0,29);
+          const sortedNum2 = this.getRandInt(0,29);
           const randResult = [this.getRandReel(), this.getRandReel(), this.getRandReel(), this.getRandReel(), this.getRandReel()] // get random results
           for (let index = 0; index < 5; index++) {
             randResult[index][line1] = sortedNum1; //change tiles in one selected line to match
@@ -79,7 +79,7 @@ export default class GameManager extends cc.Component {
         }
         else if( rand <= 50 ){
           const line = this.getRandInt(0,2);
-          const sortedNum = this.getRandInt(0,4);
+          const sortedNum = this.getRandInt(0,29);
           const randResult = [this.getRandReel(), this.getRandReel(), this.getRandReel(), this.getRandReel(), this.getRandReel()] // get random results
           for (let index = 0; index < 5; index++) {
             randResult[index][line] = sortedNum; //change tiles in one selected line to match
