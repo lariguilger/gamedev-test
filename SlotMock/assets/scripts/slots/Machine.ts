@@ -84,7 +84,6 @@ export default class Machine extends cc.Component {
   }
 
   stop(result: Array<Array<number>> = null): void {
-    console.log(result)
     setTimeout(() => {
       this.spinning = false;
       this.button.getComponent(cc.Button).interactable = true;
